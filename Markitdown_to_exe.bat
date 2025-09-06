@@ -176,10 +176,10 @@ REM Check if Inno Setup is available
 where /q iscc
 if errorlevel 1 (
     echo Inno Setup not found in PATH. Skipping installer creation.
-    echo You can manually compile markitdown-setup.iss with Inno Setup if needed.
+    echo You can manually compile markitdown-installer.iss with Inno Setup if needed.
 ) else (
     echo Compiling installer with Inno Setup...
-    iscc markitdown-setup.iss
+    iscc markitdown-installer.iss
     if errorlevel 1 (
         echo WARNING: Installer compilation failed
     ) else (

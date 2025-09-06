@@ -4,13 +4,13 @@ AppVersion=1.0.0
 AppPublisher=Microsoft Corporation
 AppPublisherURL=https://github.com/microsoft/markitdown
 AppSupportURL=https://github.com/microsoft/markitdown
-AppUpdatesURL=https://github.com/microsoft/markitdown
+AppUpdatesURL=https://github.cosm/microsoft/markitdown
 DefaultDirName={autopf}\MarkItDown
 DefaultGroupName=MarkItDown Now!
 AllowNoIcons=yes
 LicenseFile=markitdown_build\markitdown\LICENSE
 OutputDir=dist
-OutputBaseFilename=markitdown-setup
+OutputBaseFilename=markitdown-installer
 Compression=lzma
 SolidCompression=yes
 WizardStyle=modern
@@ -23,9 +23,9 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
 Source: "markitdown_build\markitdown.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: "markitdown_silent.vbs"; DestDir: "{app}"; Flags: ignoreversion
-Source: "markitdown\LICENSE"; DestDir: "{app}"; Flags: ignoreversion
-Source: "markitdown\README.md"; DestDir: "{app}"; Flags: ignoreversion
+Source: "markitdown_silent_wrapper.vbs"; DestDir: "{app}"; Flags: ignoreversion
+Source: "markitdown_build\markitdown\LICENSE"; DestDir: "{app}"; Flags: ignoreversion
+Source: "markitdown_build\markitdown\README.md"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\MarkItDown Now!"; Filename: "{app}\markitdown.exe"
@@ -41,82 +41,82 @@ Name: "restartexplorer"; Description: "Restart Windows Explorer to immediately a
 [Registry]
 ; PDF Files
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.pdf\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.pdf\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.pdf\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 ; Microsoft Office Documents
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.docx\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.docx\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.docx\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.pptx\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.pptx\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.pptx\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.xlsx\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.xlsx\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.xlsx\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.xls\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.xls\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.xls\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 ; Image Files
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.jpg\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.jpg\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.jpg\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.jpeg\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.jpeg\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.jpeg\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.png\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.png\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.png\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 ; Audio Files
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.wav\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.wav\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.wav\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.mp3\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.mp3\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.mp3\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.m4a\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.m4a\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.m4a\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.mp4\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.mp4\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.mp4\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 ; Web and Markup Files
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.html\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.html\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.html\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.htm\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.htm\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.htm\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 ; Text and Data Files
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.txt\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.txt\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.txt\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.text\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.text\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.text\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.json\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.json\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.json\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.jsonl\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.jsonl\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.jsonl\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.csv\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.csv\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.csv\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 ; Archive Files
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.zip\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.zip\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.zip\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 ; E-book Files
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.epub\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.epub\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.epub\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 ; Notebook Files
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.ipynb\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.ipynb\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.ipynb\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 ; Outlook Message Files
 Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.msg\shell\MarkItDownNow"; ValueType: string; ValueName: ""; ValueData: "MarkItDown Now!"; Flags: uninsdeletekey; Tasks: contextmenu
-Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.msg\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent.vbs"" ""%1"""; Tasks: contextmenu
+Root: HKCU; Subkey: "Software\Classes\SystemFileAssociations\.msg\shell\MarkItDownNow\command"; ValueType: string; ValueName: ""; ValueData: "wscript.exe ""{app}\markitdown_silent_wrapper.vbs"" ""%1"""; Tasks: contextmenu
 
 [Run]
 Filename: "{app}\README.md"; Description: "View the README file"; Flags: postinstall nowait skipifsilent unchecked; Tasks: readreadme
@@ -162,7 +162,7 @@ begin
       GetEnv('PATH') + ';' + ExpandConstant('{app}'));
     
     // Restart Explorer to refresh context menu (only if user selected the task)
-    if IsTaskSelected('restartexplorer') then
+    if WizardIsTaskSelected('restartexplorer') then
       RestartExplorer();
   end;
 end;
