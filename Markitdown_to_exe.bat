@@ -170,7 +170,7 @@ echo.
 echo SUCCESS! Executable created: %CD%\..\..\..\markitdown.exe
 echo.
 echo Creating Inno Setup installer (if available)...
-cd ..\..\..\
+cd ..\..\..\..\
 
 REM Check if Inno Setup is available
 where /q iscc
